@@ -49,6 +49,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.lblName.text = dic["name"] as? String ?? ""
         cell.arrImageData = dic["items"] as! NSArray
         cell.CollectionviewReaload()
+        cell.layoutIfNeeded()
         return cell
     }
     

@@ -56,7 +56,7 @@ class ListCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSou
             return CGSize(width: collectionView.frame.width / 2 - 10, height: collectionView.frame.width / 2 - 10)
           } else {
             if indexPath.row == 0{
-                return CGSize(width: collectionView.frame.width, height: 150)
+                return CGSize(width: collectionView.frame.width, height: 200)
             }else{
                 return CGSize(width: collectionView.frame.width / 2 - 10, height: collectionView.frame.width / 2 - 10)
             }
