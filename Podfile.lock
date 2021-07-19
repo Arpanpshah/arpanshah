@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.4.3)
+  - ReachabilitySwift (5.0.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - ReachabilitySwift
+  - SDWebImage (~> 5.0)
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ReachabilitySwift
+    - SDWebImage
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: a17eee34332db7799894ea54180da7cb2c426328
+
+COCOAPODS: 1.10.1
