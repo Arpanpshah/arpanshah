@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import SVProgressHUD
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -45,13 +46,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListCell
         let dic = arrData[indexPath.row] as! NSDictionary
         cell.imgUser.sd_setImage(with: URL(string: dic["image"] as? String ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
-
+        cell.lblName.text = dic["name"] as? String ?? ""
+        cell.arrImageData = dic["items"] as! NSArray
+        cell.CollectionviewReaload()
         return cell
     }
     
     //MARK:- API Calling
     func getData()
     {
+        SVProgressHUD.setBackgroundColor(UIColor.white)
+        SVProgressHUD.setDefaultStyle(.custom)
+        SVProgressHUD.setForegroundColor(.red)
+        SVProgressHUD.show()
         ApiManager.sharedInstance.GetResponseFrom(strUrl: strAPIURL) { (response, responseData, status, error) in
             print(response)
             print(responseData)
@@ -65,7 +72,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             }else{
                 
             }
-           
+            SVProgressHUD.dismiss()
             self.view.isUserInteractionEnabled = true
         }
     }

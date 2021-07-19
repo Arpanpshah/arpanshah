@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class ListCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource {
+class ListCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var dataCollection : UICollectionView!
     @IBOutlet var lblName : UILabel!
@@ -51,7 +51,18 @@ class ListCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 180)
+        let dataCount: Int = arrImageData.count
+        if dataCount % 2 == 0 {
+            return CGSize(width: collectionView.frame.width / 2 - 10, height: collectionView.frame.width / 2 - 10)
+          } else {
+            if indexPath.row == 0{
+                return CGSize(width: collectionView.frame.width, height: 150)
+            }else{
+                return CGSize(width: collectionView.frame.width / 2 - 10, height: collectionView.frame.width / 2 - 10)
+            }
+          }
+        
+        
     }
     
 }
